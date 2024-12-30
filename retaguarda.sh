@@ -19,11 +19,7 @@ fi
 # URLs dos aplicativos a serem baixados 
 CHROME_URL="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 TEAMVIEWER_URL="wget https://download.teamviewer.com/download/linux/teamviewer-host_amd64.deb"
-<<<<<<< HEAD
 ONLYOFFICE_URL="wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb"
-=======
->>>>>>> retaguarda/master
-
 
 # Adição de repositórios
 sudo add-apt-repository ppa:emoraes25/cid -y
@@ -90,10 +86,7 @@ for pacote in "${PACKAGES[@]}"; do
 done
 
 # Instalar aplicativos Snap
-<<<<<<< HEAD
-=======
-sudo snap install onlyoffice-desktopeditors
->>>>>>> retaguarda/master
+
 sudo snap install vivaldi
 
 # Remove o LibreOffice e pacotes relacionados
@@ -122,13 +115,10 @@ wget "$TEAMVIEWER_URL" -O teamviewer.deb
 sudo dpkg -i teamviewer.deb
 rm teamviewer.deb
 
-<<<<<<< HEAD
 wget "$ONLYOFFICE_URL" -O onlyoffice-desktopeditors_amd64.deb
 sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
 rm onlyoffice-desktopeditors_amd64.deb
 
-=======
->>>>>>> retaguarda/master
 # Configuração TeamViewer
 diretorio="/opt/teamviewer/2tv_bin/"
 log="/opt/log-teamviewer-adupdate.txt"
