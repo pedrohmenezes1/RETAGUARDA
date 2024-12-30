@@ -1,0 +1,37 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    hostname: ubuntu-24
+    username: tupan
+    password: "$6$wjYzMmwmGJQdItjz$SV9mEGNHyulwJDv7nOZzpsakcUuBq5Nxl/T8ZfF127IlgMgUdV8q0UY7qYVHA0XW3bp0K/wLvfLjpa7g8vLGG1
+    fullname: GRUPO TUPAN
+"
+  keyboard:
+    layout: PT
+    variant: ""
+  locale: pt_BR
+  storage:
+    layout:
+      name: lvm
+  network:
+    network:
+      version: 2
+      ethernets:
+        ens33:
+          dhcp4: true
+  updates:
+    enable: true
+  packages:
+    - openssh-server
+    - net-tools
+    - curl
+    - vim
+    
+  user-data:
+    disable_root: false
+  late-commands:
+    # Baixa e executa o script retaguarda.sh
+    - "curl -L -o /tmp/retaguarda.sh https://github.com/pedrohmenezes1/retaguarda/releases/download/Script/retaguarda.sh"
+    - "chmod +x /tmp/retaguarda.sh"
+    - "/bin/bash /tmp/retaguarda.sh"
